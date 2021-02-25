@@ -1,7 +1,7 @@
 # To add a new cell, type '# %%'
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
-
+import user_input
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
@@ -123,19 +123,19 @@ marriaging = ctrl.ControlSystemSimulation(marriage_ctrl)
 # Pass inputs to the ControlSystem using Antecedent labels with Pythonic API
 # Note: if you like passing many inputs all at once, use .inputs(dict_of_data)
 
-marriaging.input['AgeOfPerson'] = 30
-marriaging.input['AgeDifference'] = 1
-marriaging.input['LevelOfAgreementHavingKids'] = 10
-marriaging.input['PriorKids'] = 0
-marriaging.input['TotalIncome'] = 60000
-marriaging.input['TotalAssets'] = 100000
-marriaging.input['YearsOfRelation'] = 3
-marriaging.input['PreMarriageNum'] = 0
-marriaging.input['EffectiveCommunication'] = 8
-marriaging.input['CommonValues'] = 7
-marriaging.input['LongDistanceRelation'] = 20
-marriaging.input['EducationLevel'] = 7
-marriaging.input['FamilyStatus'] = 8
+marriaging.input['AgeOfPerson'] = user_input.Userinputs[0][0]
+marriaging.input['AgeDifference'] = user_input.Userinputs[1][0]
+marriaging.input['LevelOfAgreementHavingKids'] = user_input.Userinputs[2][0]
+marriaging.input['PriorKids'] = user_input.Userinputs[3][0]
+marriaging.input['TotalIncome'] = user_input.Userinputs[4][0]
+marriaging.input['TotalAssets'] = user_input.Userinputs[5][0]
+marriaging.input['YearsOfRelation'] = user_input.Userinputs[6][0]
+marriaging.input['PreMarriageNum'] = user_input.Userinputs[7][0]
+marriaging.input['EffectiveCommunication'] = user_input.Userinputs[8][0]
+marriaging.input['CommonValues'] = user_input.Userinputs[9][0]
+marriaging.input['LongDistanceRelation'] = user_input.Userinputs[10][0]
+marriaging.input['EducationLevel'] = user_input.Userinputs[11][0]
+marriaging.input['FamilyStatus'] = user_input.Userinputs[12][0]
 
 # # Crunch the numbers
 marriaging.compute()
